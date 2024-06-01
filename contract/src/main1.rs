@@ -37,6 +37,7 @@ pub extern "C" fn call() {
         runtime::get_named_arg("passing_map_contract_hash_key");
     let passing_map_contract_hash =
         ContractPackageHash::new(passing_map_contract_hash_key.into_hash().unwrap());
+
     let mut meta: BTreeMap<String, String> = BTreeMap::new();
     meta.insert(String::from("key1"), String::from("value1"));
     runtime::call_versioned_contract(
